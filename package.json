@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.57.1",
+    "uuid": "^9.0.0"
   }
 }
