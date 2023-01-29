@@ -1,0 +1,104 @@
+@use "../abstracts/mixins" as *;
+
+.header {
+    margin: 0 auto;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+
+    .content {
+        margin: 0 auto;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 75%;
+        padding: 1.25rem 0;
+
+        @include respond(phone) {
+            max-width: 100%;
+            padding: 1.25rem 2rem;
+        }
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        &__links {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+
+            @include respond(phone) {
+                display: none;
+            }
+
+            a {
+                position: relative;
+                transition: color 0.25s ease-in;
+                font-weight: 500;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    transform: scaleX(0);
+                    transition: transform 0.25s ease-in-out;
+                    border-bottom: 2px solid #fff;
+                    position: absolute;
+                    bottom: -0.5rem;
+                    width: 100%;
+                }
+
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        &__social {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25em;
+
+            a {
+                display: inline-block;
+                transition: all 0.2s ease-in-out;
+                transform: translateY(0);
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    &__dl-resume {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: none;
+        padding: 0.7rem 1.05rem;
+        font-weight: 600;
+        border-radius: 0.3rem;
+        font-size: 0.95rem;
+        background: #fff;
+        color: #000;
+
+        transition: all 0.2s ease-in-out;
+        transform: translateY(0);
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
